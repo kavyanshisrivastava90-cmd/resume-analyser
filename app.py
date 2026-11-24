@@ -5,13 +5,16 @@ st.set_page_config(page_title="AI Resume Analyser", page_icon="📄", layout="ce
 
 st.title("📄 AI Resume Analyser")
 st.write("Upload your Resume and get your AI Score!")
+st.caption("Made by Kavyanshi | BCA Project")
 
-job_role = st.selectbox("Select Job Role", ["Python Developer", "Web Developer", "Data Analyst"])
-
+job_role = st.selectbox("Select Job Role", ["Python Developer", "Web Developer", "Data Analyst", "UI/UX Designer", "Business Analyst", "HR Executive"])
 jobs_skills = {
     "Python Developer": ["python", "sql", "django", "flask", "api", "git", "machine learning"],
     "Web Developer": ["html", "css", "javascript", "react", "python", "git", "sql"],
-    "Data Analyst": ["python", "sql", "excel", "power bi", "pandas", "statistics", "tableau"]
+    "Data Analyst": ["python", "sql", "excel", "power bi", "pandas", "statistics", "tableau"],
+        "UI/UX Designer": ["figma", "adobe xd", "wireframe", "photoshop", "user research", "prototype"],
+    "Business Analyst": ["excel", "sql", "power bi", "communication", "documentation", "requirements"],
+    "HR Executive": ["recruitment", "communication", "excel", "interview", "hrms", "onboarding"]
 }
 
 uploaded_file = st.file_uploader("Upload your Resume (PDF)", type=["pdf"])
@@ -46,4 +49,4 @@ if uploaded_file is not None:
             st.write(f"- {s}")
     report = f"Job Role: {job_role}\nScore: {score}/100\nFound: {found}\nMissing: {missing}"
     st.download_button("📥 Download Report", report, file_name="resume_report.txt")
-    st.caption("Made by Kavyanshi  | BCA Project")
+   

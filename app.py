@@ -46,3 +46,4 @@ if uploaded_file is not None:
             st.write(f"- {s}")
     report = f"Job Role: {job_role}\nScore: {score}/100\nFound: {found}\nMissing: {missing}"
     st.download_button("📥 Download Report", report, file_name="resume_report.txt")
+    st.caption("Made by Kavyanshi  | BCA Project")

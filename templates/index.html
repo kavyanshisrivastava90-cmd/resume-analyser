@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+`<!DOCTYPE html>
 <html>
 <head>
 <title>Resume Analyser - By Kavy</title>
@@ -20,12 +20,12 @@ button{width:100%;padding:14px;background:linear-gradient(90deg,#ff6a88,#6a11cb)
 <body>
 <div class="box">
 <h1>✨ Resume Analyser ✨</h1>
-<p>Apna Resume upload karo aur dekho tum Job ke liye kitni ready ho!</p>
+<p>Upload your Resume and check how ready you are for the Job!</p>
 <form action="/analyze" method="post" enctype="multipart/form-data">
-<b>1. Apna Resume (PDF) Chuno:</b><br>
+<b>1. Choose Your Resume (PDF):</b><br>
 <input type="file" name="resume" required><br><br>
-<b>2. Job Description Paste Karo:</b><br>
-<textarea name="job_desc" rows="5" placeholder="Yahan Job Description paste karo... Ex: Python, SQL, Excel..." required></textarea><br>
+<b>2. Paste Job Description:</b><br>
+<textarea name="job_desc" rows="5" placeholder="Paste Job Description here... Ex: Python, SQL, Excel..." required></textarea><br>
 <button type="submit">🚀 Analyze My Resume</button>
 </form>
 
@@ -34,17 +34,17 @@ button{width:100%;padding:14px;background:linear-gradient(90deg,#ff6a88,#6a11cb)
 <h2>📊 Result</h2>
 <div class="score">{{ result.score }} / 100</div>
 <p>
-{% if result.score >= 80 %} 🎉 Excellent! Tum almost ready ho!
-{% elif result.score >= 50 %} 👍 Good! Thoda aur sudhar karo.
-{% else %} 💪 Mehnat karo, ho jayega!
+{% if result.score >= 80 %} 🎉 Excellent! You are almost ready!
+{% elif result.score >= 50 %} 👍 Good! Improve a little more.
+{% else %} 💪 Keep trying, you can do it!
 {% endif %}
 </p>
 <h3>✅ Matched Skills:</h3>
-<p>{% for s in result.matched %}<span class="badge ok">{{ s }}</span>{% endfor %}{% if not result.matched %}Koi skill match nahi hui{% endif %}</p>
+<p>{% for s in result.matched %}<span class="badge ok">{{ s }}</span>{% endfor %}{% if not result.matched %}No skills matched{% endif %}</p>
 <h3>❌ Missing Skills:</h3>
-<p>{% for s in result.missing %}<span class="badge no">{{ s }}</span>{% endfor %}{% if not result.missing %}Kuch missing nahi hai, perfect! 🎉{% endif %}</p>
+<p>{% for s in result.missing %}<span class="badge no">{{ s }}</span>{% endfor %}{% if not result.missing %}Nothing missing, Perfect! 🎉{% endif %}</p>
 <div class="tip">
-<b>💡 Tip:</b> Missing wali skills ko apne Resume me add karo ya seekh lo, score 100 ho jayega!
+<b>💡 Tip:</b> Add the missing skills to your Resume or learn them to get 100 score!
 </div>
 </div>
 {% endif %}

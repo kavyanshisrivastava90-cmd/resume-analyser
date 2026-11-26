@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head><title>Resume Analyser</title></head>
+<body>
+<h1>Resume Analyser</h1>
+<form action="/analyze" method="post" enctype="multipart/form-data">
+<input type="file" name="resume" required><br><br>
+<textarea name="job_desc" placeholder="Paste Job Description" required></textarea><br><br>
+<button type="submit">Analyze</button>
+</form>
+{% if result %}
+<h2>Result</h2>
+<p>{{ result }}</p>
+<h2>Jobs</h2>
+<p>{{ jobs }}</p>
+{% endif %}
+</body>
+</html>
